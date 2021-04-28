@@ -15,6 +15,8 @@
 		1211B43E2636EF2F0046F6E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1211B43C2636EF2F0046F6E9 /* LaunchScreen.storyboard */; };
 		1211B44F2636F1B40046F6E9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211B44E2636F1B40046F6E9 /* LoginViewModel.swift */; };
 		1211B4542636F24A0046F6E9 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211B4532636F24A0046F6E9 /* LoginViewState.swift */; };
+		1271310126391FAA00438E35 /* FailWithDelayLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271310026391FAA00438E35 /* FailWithDelayLoginService.swift */; };
+		1271310726391FE300438E35 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1271310626391FE300438E35 /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1211B43F2636EF2F0046F6E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1211B44E2636F1B40046F6E9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1211B4532636F24A0046F6E9 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
+		1271310026391FAA00438E35 /* FailWithDelayLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailWithDelayLoginService.swift; sourceTree = "<group>"; };
+		1271310626391FE300438E35 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 		1211B44A2636F1470046F6E9 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				127130FF26391F7C00438E35 /* Services */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -143,6 +148,15 @@
 				1211B4532636F24A0046F6E9 /* LoginViewState.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		127130FF26391F7C00438E35 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1271310026391FAA00438E35 /* FailWithDelayLoginService.swift */,
+				1271310626391FE300438E35 /* LoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,8 +232,10 @@
 				1211B44F2636F1B40046F6E9 /* LoginViewModel.swift in Sources */,
 				1211B4322636EF2E0046F6E9 /* AppDelegate.swift in Sources */,
 				1211B4342636EF2E0046F6E9 /* SceneDelegate.swift in Sources */,
+				1271310126391FAA00438E35 /* FailWithDelayLoginService.swift in Sources */,
 				1211B4362636EF2E0046F6E9 /* LoginView.swift in Sources */,
 				1211B4542636F24A0046F6E9 /* LoginViewState.swift in Sources */,
+				1271310726391FE300438E35 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

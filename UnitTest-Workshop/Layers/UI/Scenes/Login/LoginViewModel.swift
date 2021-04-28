@@ -10,7 +10,18 @@ import SwiftUI
 
 final class LoginViewModel: ObservableObject {
     @Published private(set) var state: LoginViewState
+    private let service: LoginService
+    private let loginDidSucceed: () -> Void //Não precisa do @escaping pois está subentendido que está armazenado
     
+    init(
+        initialState: LoginViewState = .init(),
+        service: LoginService,
+        loginDidSucceed: @escaping () -> Void
+    ) {
+        state = initialState
+        self.service = service
+        self.loginDidSucceed = loginDidSucceed
+    }
     
     var bindings: (
         email: Binding<String>,
@@ -23,18 +34,17 @@ final class LoginViewModel: ObservableObject {
             isShowingErrorAlert: Binding(get: {self.state.isShowingErrorAlert}, set: {self.state.isShowingErrorAlert = $0})
         )
     }
-    
-    init(
-        initialState: LoginViewState = .init()
-    ) {
-        state = initialState
-    }
-    
+
     func login() {
         state.isLoggingIn = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.state.isLoggingIn = false
-            self.state.isShowingErrorAlert = true
+        service.login(email: state.email, password: state.password) { [weak self] (error) in
+            if error == nil {
+                self?.loginDidSucceed()
+            } else {
+                self?.state.isLoggingIn = false
+                self?.state.isShowingErrorAlert = true
+            }
+             
         }
     }
 }

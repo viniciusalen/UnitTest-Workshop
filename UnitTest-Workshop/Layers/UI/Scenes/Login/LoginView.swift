@@ -52,6 +52,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(model: .init())
+        LoginView(model: .init(service: EmptyLoginService(), loginDidSucceed:{}))
     }
 }

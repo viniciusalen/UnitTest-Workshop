@@ -15,25 +15,13 @@ struct LoginViewState: Equatable {
 }
 
 
-extension LoginViewState {
-    static let isLoggingInFooter = "Fazendo login..."
 
+extension LoginViewState {
     var canSubmit: Bool {
         email.isEmpty == false
             && password.isEmpty == false
-            && isLoggingIn == false
     }
-
     var footerMessage: String {
-        isLoggingIn ? Self.isLoggingInFooter : ""
+        isLoggingIn ? "Fazendo Login..." : ""
     }
 }
-//extension LoginViewState {
-//    var canSubmit: Bool {
-//        email.isEmpty == false
-//            && password.isEmpty == false
-//    }
-//    var footerMessage: String {
-//        isLoggingIn ? "Fazendo Login..." : ""
-//    }
-//}
