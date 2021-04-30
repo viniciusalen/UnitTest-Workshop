@@ -11,5 +11,7 @@ protocol LoginService {
 }
 
 struct EmptyLoginService: LoginService {
-    func login(email: String, password: String, completion: @escaping (Error?) -> Void){}
+    func login(email: String, password: String, completion: @escaping (Error?) -> Void){
+        
+    }
 }
